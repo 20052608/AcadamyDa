@@ -1,0 +1,205 @@
+:root {
+    --primary-blue: #2c3e50;
+    --secondary-blue: #0f3f5e;
+    --light-blue: #043352;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --dark-gray: #7f8c8d;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+.banner-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+    height: 120px;
+    overflow: hidden;
+}
+
+.banner-fixed img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contenido principal */
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-top: 150px; /* Ajuste para el banner */
+    padding-bottom: 30px;
+    margin-top: 20px; /* Espacio adicional */
+}
+
+/* Tarjeta de Login */
+.login-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: #333;
+    animation: fadeIn 0.6s ease-out;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    border-top: 5px solid var(--light-blue); /* Línea azul superior */
+}
+
+/* Triángulo decorativo */
+.login-card:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--light-blue);
+}
+
+.login-icon-container {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-blue);
+    border-radius: 50%;
+    color: white;
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+/* Resto del CSS se mantiene igual */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.input-group-text {
+    background-color: var(--light-gray);
+    border-color: #ddd;
+    color: var(--dark-gray);
+}
+
+.form-control {
+    height: 45px;
+    border-color: #ddd;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--light-blue);
+    box-shadow: 0 0 0 0.2rem rgba(1, 50, 82, 0.25);
+}
+
+.toggle-password {
+    border-color: #ddd;
+    color: var(--dark-gray);
+    transition: all 0.3s;
+}
+
+.toggle-password:hover {
+    background-color: var(--light-gray);
+    color: var(--primary-blue);
+}
+
+.hint-text {
+    color: var(--dark-gray) !important;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.btn-login {
+    background-color: var(--light-blue);
+    color: white;
+    border: none;
+    height: 50px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    background-color: var(--secondary-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@media (max-width: 768px) {
+    .login-card {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .login-card {
+        padding: 25px 20px;
+    }
+    .main-content {
+        padding-top: 130px;
+    }
+}

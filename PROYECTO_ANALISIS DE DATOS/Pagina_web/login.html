@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso al Sistema Educativo</title>
+    <!-- Bootstrap 4.5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/Pagina_web/styles/login.css">
+</head>
+<body>
+    <!-- Encabezado como imagen -->
+   <header class="banner-fixed">
+        <img src="images/encabezadoproyecto.png" alt="Encabezado del Proyecto">
+    </header>
+
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 col-xl-5">
+                    <div class="login-card">
+                        <div class="text-center mb-4">
+                            <div class="login-icon-container">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <h2 class="mt-3">Iniciar Sesión</h2>
+                            <p class="text-muted">Ingrese sus credenciales para acceder al sistema</p>
+                        </div>
+                        
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="username">Usuario</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+                                    </div>
+                                    <select class="form-control" id="username" required>
+                                        <option value="">Seleccione su rol...</option>
+                                        <option value="profesor">Profesor</option>
+                                        <option value="estudiante">Estudiante</option>
+                                        <option value="admin">Administrador</option>
+                                        <option value="director">Director</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password">Contraseña</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                    </div>
+                                    <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" required>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary toggle-password" type="button">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <small class="form-text text-muted hint-text">Todos los usuarios usan: 1234</small>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-login" id="loginBtn">
+                                <span id="btnText">Ingresar</span>
+                                <span id="btnSpinner" class="spinner-border spinner-border-sm d-none"></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Error -->
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="errorModalLabel"><i class="fas fa-exclamation-triangle mr-2"></i>Error de Acceso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El usuario o contraseña ingresados son incorrectos.</p>
+                    <p class="mb-0"><strong>Recuerde:</strong> Todos los usuarios usan la contraseña <strong>1234</strong></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+</html>
